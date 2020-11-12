@@ -14,4 +14,15 @@ class Constants {
     ResistanceColor(color: Colors.grey, name: 'Grey', digit: 8),
     ResistanceColor(color: Colors.white, name: 'White', digit: 9),
   ];
+
+  static List<ResistanceColor> ToleranceColorList = [
+    ResistanceColor(color: Colors.brown, name: 'Brown', digit: 100),
+    ResistanceColor(color: Colors.red, name: 'Red', digit: 200),
+    ResistanceColor(color: Colors.green, name: 'Green', digit: 50),
+    ResistanceColor(color: Colors.blue, name: 'Blue', digit: 25),
+    ResistanceColor(color: Colors.purple, name: 'Purple', digit: 10),
+    ResistanceColor(color: Colors.grey, name: 'Grey', digit: 5),
+    ResistanceColor(color: Colors.yellow[300], name: 'Gold', digit: 500),
+    ResistanceColor(color: Colors.blueGrey, name: 'Silver', digit: 1000),
+  ];
 }
