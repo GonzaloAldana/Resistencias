@@ -99,6 +99,27 @@ class _HomeState extends State<Home> {
       });
     };
 
+    var txtCalculate = (txt) {
+      try {
+        // this part still is not working as expected,
+        // but this project was made in less than 5 hours
+
+        // validate if is number
+        int.parse(txt);
+
+        setFirst(int.parse(txt[0]));
+        setSecond(int.parse(txt[1]));
+        setPow(txt.length - 1 > 0 ? txt.length - 1 : 1);
+        calculate();
+        setState(() {
+          result = txt;
+        });
+      } catch (error) {
+        print(error);
+        print(txt);
+      }
+    };
+
     var col = Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -123,7 +144,18 @@ class _HomeState extends State<Home> {
           hint: 'Tolerance',
           callback: setTol,
         ),
-        Text('$result ohms, ${tol / 100}% tolerance')
+        Text(
+          '$result ohms, ${tol / 100}% tolerance',
+          style: TextStyle(fontSize: 30, color: Colors.teal),
+        ),
+        TextField(
+          decoration: InputDecoration(
+            hintText: 'Enter ohms',
+            enabledBorder: UnderlineInputBorder(),
+          ),
+          keyboardType: TextInputType.number,
+          onChanged: txtCalculate,
+        )
       ],
     );
 
